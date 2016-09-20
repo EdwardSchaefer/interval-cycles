@@ -1,0 +1,33 @@
+div {
+
+}
+
+.note {
+	height:40px;
+	width:40px;
+	background-color:#EEEEEE;
+	border-radius: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center
+}
+
+.NTHeadindex {
+
+}
+
+.headTable {width:80%;border-width: 0px;border-collapse: collapse;}
+.headTable th {font-size:12px;background-color:#0000FF;border-width: 0px;padding: 0px;border-style: solid;border-color: #729ea5;text-align:center;}
+.headTable tr {background-color:#ffff00;border-collapse: collapse}
+.headTable td {font-size:24px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;vertical-align:middle;}
+
+.noteTable {border-width: 0px;border-collapse: collapse;-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-o-user-select: none;
+user-select: none;
+cursor: default;}
+.noteTable th {font-size:12px;background-color:#EEEEEE;border-width: 0px;padding: 0px;border-style: solid;border-color: #729ea5;}
+.noteTable tr {background-color: hsl(0,10%, 75%);font: 25px monospace;}
+.noteTable td {width: 50px;height: 50px;font-color: #000000;border-width: 0px;padding: 0px;border-style: solid;border-color: hsl(0,10%, 85%);text-align:center;}
