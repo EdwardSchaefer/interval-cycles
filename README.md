@@ -4,7 +4,7 @@
 This program will dynamically create a color-coded interactive grid to 
 help explore the relation between notes in different interval cycles in 
 various temperaments. It is inspired by and similar to a grid/array first 
-constructed by Alan Berg based on the 12-tone series of notes used in 
+constructed by George Perle based on the 12-tone series of notes used in 
 western music. This version adds new features and interactivity.
 
 Each note is colored with a hue which corresponds to it's position in the 
@@ -69,3 +69,7 @@ refernce pitch to 440Hz and initializes referencePitchN to 49 to be the
 Best viewed on Google Chrome, 1920x1080 resolution
 
 Most of the code was written March 2016.
+
+#List of Changes
+----------------
+9/5/2017 - Edit README.md to attribute theory to proper person
