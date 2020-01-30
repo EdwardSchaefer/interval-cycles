@@ -1,10 +1,18 @@
 var equalTemp = 12;
 var currentNote = 0;
 var isDown = false;
+var initialized = false;
 
 //initializes variables and determines if the mouse is clicked or not
 $(document)
-  .ready(function() {
+  .mousedown(function(){
+      isDown = true;
+  })
+  .mouseup(function(){
+      isDown = false;
+  });
+
+var initialize = function() {
     tableMaker(equalTemp);
     armSynth();
     context = new window.AudioContext() //synthesizer
@@ -15,17 +23,10 @@ $(document)
     gain = context.createGain();
     gain.connect(context.destination);
     gain.gain.value = 0;
-    osc1.start(0)
+    osc1.start(0);
     osc1.connect(gain);
-    })
-  .mousedown(function(){
-      isDown = true;
-      console.log(isDown)
-  })
-  .mouseup(function(){
-      isDown = false;
-      console.log(isDown)
-  })
+    initialized = true;
+};
 
 
 //Creates a table of notes based on the selected temperament using nested for loops.
@@ -75,7 +76,7 @@ var tableDeleter = function(){
 //Calculates the pitch of the note and plays it if the mouse is clicked and over the note.
 function armSynth(){
   $(".noteTable td")
-    .mouseover( 
+    .mouseover(
       function() {
       var desiredPitchN = ((parseInt(this.innerHTML))) + 49;
       var equalTempNthRootOfTwo = Math.pow(2, (1/equalTemp));
@@ -83,15 +84,13 @@ function armSynth(){
       var productQ = Math.pow(equalTempNthRootOfTwo, desiredPitchNMinusReferencePitchN);
       var desiredPitchHz = (referencePitchHz * productQ);
       osc1.frequency.value = desiredPitchHz;
-      console.log(desiredPitchHz)
       if (isDown === true)
       {
         gain.gain.value = 100;
-        console.log(isDown);
       }
       else
       {
-        console.log(isDown);
+
       }
     })
     .mouseleave(function(){
@@ -115,6 +114,9 @@ function colorize(){
 
 //Changes the temperament to the one selected by the user.
 function newTemp() {
+    if (!initialized) {
+        initialize();
+    }
     equalTemp = document.getElementById("selectTemp").selectedIndex + 3; //plus whatever the lowest value is
     tableDeleter();
     tableMaker(equalTemp);
