@@ -19,7 +19,7 @@ var initialize = function() {
     referencePitchHz = 440;
     referencePitchN = 49;
     osc1 = context.createOscillator();
-    osc1.type ="square";
+    osc1.type = "sine";
     gain = context.createGain();
     gain.connect(context.destination);
     gain.gain.value = 0;
