@@ -75,3 +75,6 @@ Most of the code was written March 2016.
 9/5/2017 - Edit README.md to attribute theory to proper person
 
 9/7/2017 - Change default drop down menu to 12-TET in index.html
+
+1/30/2020 - Fix audio policy related Chrome bug, Firefox distortion bug,
+set charset.
